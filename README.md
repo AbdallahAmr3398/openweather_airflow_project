@@ -1,7 +1,8 @@
 # Weather Data Pipeline with Airflow
 ![Cap](https://github.com/AbdallahAmr3398/openweather_airflow_project/assets/141870604/d58dac9c-be4f-470d-8682-4579486f3a23)
 This Airflow Directed Acyclic Graph (DAG) orchestrates the extraction, transformation, and loading (ETL) process of weather data from the OpenWeatherMap API into a PostgreSQL database.
-Overview
+
+##Overview
 
 ##The pipeline is designed to perform the following tasks:
 
@@ -9,13 +10,13 @@ Overview
     Transform: Convert the retrieved data into a structured format, transforming temperatures from Kelvin to Fahrenheit.
     Load: Store the transformed data into PostgreSQL tables and upload joined data to an S3 bucket.
 
-###Prerequisites
+##Prerequisites
 
     Airflow: Ensure you have Apache Airflow installed.
     PostgreSQL: Configure a PostgreSQL database and update the connection details in the DAG file.
     OpenWeatherMap API Key: Obtain an API key and update it in the DAG file.
 
-###DAG Structure
+##DAG Structure
 
     Dependencies: The DAG has dependencies set to run daily (@daily) starting from November 17, 2023.
     Retries: Set to 2 retries with a retry delay of 2 minutes.
