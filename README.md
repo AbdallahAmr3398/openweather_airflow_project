@@ -5,7 +5,6 @@
 This Airflow Directed Acyclic Graph (DAG) orchestrates the extraction, transformation, and loading (ETL) process of weather data from the OpenWeatherMap API into a PostgreSQL database.
 
 ## Overview
-
 ### The pipeline is designed to perform the following tasks:
 Extract: Retrieve weather data for Houston from OpenWeatherMap API.
 Transform: Convert the retrieved data into a structured format, transforming temperatures from Kelvin to Fahrenheit.
