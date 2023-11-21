@@ -6,9 +6,9 @@ This Airflow Directed Acyclic Graph (DAG) orchestrates the extraction, transform
 
 ## Overview
 ### The pipeline is designed to perform the following tasks:
-Extract: Retrieve weather data for Houston from OpenWeatherMap API.
-Transform: Convert the retrieved data into a structured format, transforming temperatures from Kelvin to Fahrenheit.
-Load: Store the transformed data into PostgreSQL tables and upload joined data to an S3 bucket.
+- Extract: Retrieve weather data for Houston from OpenWeatherMap API.
+- Transform: Convert the retrieved data into a structured format, transforming temperatures from Kelvin to Fahrenheit.
+- Load: Store the transformed data into PostgreSQL tables and upload joined data to an S3 bucket.
 ### Prerequisites
  Airflow: Ensure you have Apache Airflow installed.
  PostgreSQL: Configure a PostgreSQL database and update the connection details in the DAG file.
