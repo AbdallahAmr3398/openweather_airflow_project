@@ -7,18 +7,18 @@ This Airflow Directed Acyclic Graph (DAG) orchestrates the extraction, transform
 ## Overview
 
 ### The pipeline is designed to perform the following tasks:
-    Extract: Retrieve weather data for Houston from OpenWeatherMap API.
-    Transform: Convert the retrieved data into a structured format, transforming temperatures from Kelvin to Fahrenheit.
-    Load: Store the transformed data into PostgreSQL tables and upload joined data to an S3 bucket.
+Extract: Retrieve weather data for Houston from OpenWeatherMap API.
+Transform: Convert the retrieved data into a structured format, transforming temperatures from Kelvin to Fahrenheit.
+Load: Store the transformed data into PostgreSQL tables and upload joined data to an S3 bucket.
 ### Prerequisites
-    Airflow: Ensure you have Apache Airflow installed.
-    PostgreSQL: Configure a PostgreSQL database and update the connection details in the DAG file.
-    OpenWeatherMap API Key: Obtain an API key and update it in the DAG file.
+ Airflow: Ensure you have Apache Airflow installed.
+ PostgreSQL: Configure a PostgreSQL database and update the connection details in the DAG file.
+ OpenWeatherMap API Key: Obtain an API key and update it in the DAG file.
 ### DAG Structure
-    Dependencies: The DAG has dependencies set to run daily (@daily) starting from November 17, 2023.
-    Retries: Set to 2 retries with a retry delay of 2 minutes.
+ Dependencies: The DAG has dependencies set to run daily (@daily) starting from November 17, 2023.
+ Retries: Set to 2 retries with a retry delay of 2 minutes.
 ### Tasks
-    tsk_start_pipeline: Dummy task marking the start of the pipeline.
+tsk_start_pipeline: Dummy task marking the start of the pipeline.
     group_a: Task group encompassing the extraction, transformation, and loading process.
         tsk_create_table_1: Creates or ensures the existence of the city_look_up table in PostgreSQL.
         tsk_truncate_table: Truncates data from the city_look_up table.
@@ -32,11 +32,11 @@ This Airflow Directed Acyclic Graph (DAG) orchestrates the extraction, transform
     task_load_joined_data: Saves the joined data to an S3 bucket in CSV format.
     task_end_pipeline: Dummy task marking the end of the pipeline.
 ### Usage
-    Configure Airflow connections for PostgreSQL and the OpenWeatherMap API.
-    Update the DAG file with the necessary API keys, file paths, and database connections.
-    Place the DAG file in the Airflow DAGs folder and ensure Airflow picks it up.
-    Monitor the Airflow UI to observe the DAG runs and task statuses.
+Configure Airflow connections for PostgreSQL and the OpenWeatherMap API.
+Update the DAG file with the necessary API keys, file paths, and database connections.
+Place the DAG file in the Airflow DAGs folder and ensure Airflow picks it up.
+Monitor the Airflow UI to observe the DAG runs and task statuses.
 ### Contributors
-    Abdallah & Tuqa
+ Abdallah & Tuqa
 
 
